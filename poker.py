@@ -99,6 +99,7 @@ def plot_bankroll():
 
 # --- Usage ---
 #once added make a note so not added twice
+#once you add the session make sure you add 00:00:00 into the csv so that the graph runs
 #add_session("cash", "25/50", 20, 50)
 #add_session("cash", "25/50", 20, 55)
 #add_session("cash", "25/50", 20, 35)
