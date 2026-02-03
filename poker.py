@@ -8,6 +8,7 @@ try:
 except FileNotFoundError:
     df = pd.DataFrame(columns=['Date', 'GameType', 'Stakes', 'BuyIn', 'CashOut', 'Net'])
 #Create a csv file called poker_log.csv that is empty
+
 def add_session(game_type, stakes, buyin, cashout):
     """Adds a new session to the log."""
     global df
@@ -105,7 +106,6 @@ def plot_bankroll():
 #add_session("cash", "25/50", 40, 72)
 #add_session("cash", "25/50", 20, 63)
 #add_session("cash", "25/50", 30, 0)
-
 
 show_stats()
 plot_bankroll()
