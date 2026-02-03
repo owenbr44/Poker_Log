@@ -7,7 +7,7 @@ try:
     df = pd.read_csv('poker_log.csv', parse_dates=['Date'])
 except FileNotFoundError:
     df = pd.DataFrame(columns=['Date', 'GameType', 'Stakes', 'BuyIn', 'CashOut', 'Net'])
-
+#Create a csv file called poker_log.csv that is empty
 def add_session(game_type, stakes, buyin, cashout):
     """Adds a new session to the log."""
     global df
