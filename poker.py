@@ -99,7 +99,7 @@ def plot_bankroll(save_png=True, filename="poker_bankroll.png"):
         print(f"Saved graph to: {filename}")
 
     plt.show()
-    plt.close(fig)  # optional, but nice if you run it a lot
+    plt.close(fig)
     plt.show()
 
 
