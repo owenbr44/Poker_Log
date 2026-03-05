@@ -38,7 +38,7 @@ def show_stats():
     print("\nSession History:")
     print(df.to_string(index=False))
     
-def plot_bankroll():
+def plot_bankroll(save_png=True, filename="poker_bankroll.png"):
     """Plots cumulative profit over time."""
     if df.empty:
         print("No sessions logged yet.")
@@ -51,7 +51,7 @@ def plot_bankroll():
     d['Cumulative'] = d['Net'].cumsum()
     
     # Create larger figure with better proportions
-    plt.figure(figsize=(12, 6))
+    fig = plt.figure(figsize=(12, 6))
     
     # Color the line based on profit/loss
     colors = ['green' if x >= 0 else 'red' for x in d['Cumulative']]
@@ -94,6 +94,12 @@ def plot_bankroll():
     
    
     plt.tight_layout()
+    if save_png:
+        fig.savefig(filename, dpi=300, bbox_inches="tight")
+        print(f"Saved graph to: {filename}")
+
+    plt.show()
+    plt.close(fig)  # optional, but nice if you run it a lot
     plt.show()
 
 
@@ -107,6 +113,16 @@ def plot_bankroll():
 #add_session("cash", "25/50", 40, 72)
 #add_session("cash", "25/50", 20, 63)
 #add_session("cash", "25/50", 30, 0)
-
+#add_session("cash", "25/50", 40, 8)
+#add_session("cash", "20/40", 20, 27)
+#add_session("cash", "25/50", 20, 40)
+#add_session("cash", "25/50", 40, 0)
+#add_session("cash", "25/50", 40, 0)
+#add_session("cash", "25/50", 40, 12)
+#add_session("cash", "25/50", 20, 57)
+#add_session("cash", "25/50", 40, 60)
+#add_session("cash", "25/50", 20, 67)
+#add_session("cash", "25/50", 45, 25)
+#add_session("cash", "25/50", 20, 50)
 show_stats()
-plot_bankroll()
+plot_bankroll(save_png=True, filename="poker_bankroll.png")
