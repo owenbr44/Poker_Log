@@ -124,5 +124,6 @@ def plot_bankroll(save_png=True, filename="poker_bankroll.png"):
 #add_session("cash", "25/50", 20, 67)
 #add_session("cash", "25/50", 45, 25)
 #add_session("cash", "25/50", 20, 50)
+#add_session("cash", "25/50", 20, 110)
 show_stats()
 plot_bankroll(save_png=True, filename="poker_bankroll.png")
